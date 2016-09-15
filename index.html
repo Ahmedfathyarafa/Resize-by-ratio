@@ -31,42 +31,49 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-    Javascript code for web elements dimension optimizing
 
-Hi. I'm Silvia Malavasi, web designer.
+<p>Hi. I'm Silvia Malavasi, web designer.</p>
 
-I always fight with giving html elements the right size and center when designing a full screen website. This little script allow you to have your div centered and full sized and still keep its original aspect razio. No cuts and no stretches, just the maximum width or height your screen allows. So you can have a perfect background image and a right-sized div to contain it. Your site can now fit in this div (if you don't want your site to scroll down). You can always use resize_by_ratio without a real background image, just to give your content div a fullscreen dimension.
+<p>I always fight with giving html elements the right size and center when designing a full screen website. This little script allow you to have your div centered and full sized and still keep its original aspect razio.</p>
+<p>No cuts and no stretches, just the maximum width or height your screen allows. So you can have a perfect background image and a right-sized div to contain it. Your site can now fit in this div (if you don't want your site to scroll down).</p>
+<p> You can always use resize_by_ratio without a real background image, just to give your content div a fullscreen dimension.</p>
 
-You can find an example of resize_by_ratio here: http://www.hostservizi.it/
+<p>You can find an example of resize_by_ratio here: <a href="http://www.hostservizi.it/">hostservizi.it</a></p>
 
-Let's see how to do it.
+<p>Let's see how to do it.</p>
 
-EXAMPLE: you want your MYCONTENT div fits on screen. MYCONTENT contains an image (MYIMAGE) wich dimensions are 1600px x 1000px.
+<p>EXAMPLE: you want your MYCONTENT div fits on screen. MYCONTENT contains an image (MYIMAGE) wich dimensions are 1600px x 1000px.</p>
 
-                HTML
+<p>           HTML</br>
+</br>
+                <div id="MYCONTENT"></br>
+                    <img src="MYIMAGE"></br>
+                </div></br>
+</br>
+                CSS</br>
+</br>
+                #MYCONTENT  {</br>
+                    margin: auto;</br>
+                    left: 0;</br>
+                    right:0;</br>
+                    display: none;</br>
+                    }</br>
+</br>
+                #MYCONTENT  img {</br>
+                    width: 100%;</br>
+                    height: 100%;</br>
+                }</br>
+</p>
 
-                <div id="MYCONTENT">
-                    <img src="MYIMAGE">
-                </div>
+<p>The function resizebyratio gets 4 parameters:</br>
+divname: the name of the div to resize, in this case #MYCONTENT</br>
+x: the image width, in this case 1600</br>
+y: the image height, in this case 1000</br>
+maxwidth: the maximum width of the content (in this case 1600, cause we don't want to loose the image quality on bigger screens or make the site too big).</p>
 
-                CSS
+<p>Copy the HTML, the CSS and the JS code in your site and launch resizebyratio.</p>
 
-                #MYCONTENT  {
-                    margin: auto;
-                    left: 0;
-                    right:0;
-                    display: none;
-                    }
-
-                #MYCONTENT  img {
-                    width: 100%;
-                    height: 100%;
-                }
-The function resizebyratio gets 4 parameters: divname: the name of the div to resize, in this case #MYCONTENT x: the image width, in this case 1600 y: the image height, in this case 1000 maxwidth: the maximum width of the content (in this case 1600, cause we don't want to loose the image quality on bigger screens or make the site too big).
-
-Copy the HTML, the CSS and the JS code in your site and launch resizebyratio.
-
-$(document).ready(resizebyratio(#MYCONTENT, 1600, 800, 1600));
+<p>$(document).ready(resizebyratio(#MYCONTENT, 1600, 800, 1600));</p>
     </div>
 
     <!-- FOOTER  -->
