@@ -104,7 +104,8 @@
             	else { 
             		var divheight = divwidth * y / x;
             		var mtop = (screenh - divheight) / 2;
-            		$(divname).css({"width":divwidth+"px", "height":divheight+"px", "margin-top":mtop+(screenh/100*3)+"px"});
+            		$(divname).css({"width":divwidth+"px", "height":divheight+"px",
+            		"margin-top":mtop+(screenh/100*3)+"px"});
             	};
             	$(divname).css("display", "block");
           };
