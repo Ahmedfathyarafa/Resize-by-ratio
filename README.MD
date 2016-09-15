@@ -1,4 +1,4 @@
-Javascript code for web elements dimension optimizing
+jQuery code for web elements dimension optimizing
 
 Hi. I'm Silvia Malavasi, web designer.
 
