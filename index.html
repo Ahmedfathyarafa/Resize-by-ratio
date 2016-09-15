@@ -46,24 +46,69 @@
 
 <p><xmp>
          HTML
-         
-                <div id="MYCONTENT"> 
-                    <img src="MYIMAGE"> 
-                </div> 
+        
+          <div id="MYCONTENT"> 
+            <img src="MYIMAGE"> 
+          </div> 
  
-                CSS 
  
-                #MYCONTENT  { 
-                    margin: auto; 
-                    left: 0; 
-                    right:0; 
-                    display: none; 
-                    } 
+          CSS 
  
-                #MYCONTENT  img { 
-                    width: 100%;<
-                    height: 100%;
-                } 
+          #MYCONTENT  { 
+              margin: auto; 
+              left: 0; 
+              right:0; 
+              display: none; 
+          } 
+ 
+          #MYCONTENT  img { 
+              width: 100%;<
+              height: 100%;
+          } 
+        
+        
+          JQUERY
+          
+          function resizebyratio(divname, x, y, maxwidth) {
+            	$(divname).css("display", "none");
+            	var screenw = window.innerWidth-15;
+            	var screenh = window.innerHeight-20;
+            	var screenratio = screenw / screenh;
+            	var divratio = x / y;
+            	var divwidth = Math.min(screenw, maxwidth); 
+            	if (divratio <= 1) {
+            		var divwidth = screenh * x / y;
+            		if (divwidth == maxwidth) {		
+            			var divheight = maxwidth * y /x;
+            			var mtop = (screenh - divheight) / 2;
+            			$(divname).css({"margin-top":mtop+"px"});
+            		}
+            		else {
+            			var divheight = screenh;
+            		};
+            		$(divname).css({"height":divheight+"px", "width":divwidth+"px"});
+            	}
+            	else if (1 < divratio && divratio <= screenratio) {
+            		var divwidth = screenh * x / y;
+            		if (divwidth >= maxwidth) {
+            			var divheight = maxwidth * y /x;
+            			var mtop = (screenh - divheight) / 2;
+            			$(divname).css({"margin-top":mtop+(screenh/100*3)+"px"});
+            			divwidth = maxwidth;
+            		}
+            		else {
+            			var divheight = screenh;
+            		};
+            		$(divname).css({"height":divheight+"px", "width":divwidth+"px"});
+            	}		
+            	else { 
+            		var divheight = divwidth * y / x;
+            		var mtop = (screenh - divheight) / 2;
+            		$(divname).css({"width":divwidth+"px", "height":divheight+"px", "margin-top":mtop+(screenh/100*3)+"px"});
+            	};
+            	$(divname).css("display", "block");
+          };
+
 </xmp></p>
 
 <p>The function resizebyratio gets 4 parameters:</br>
@@ -75,6 +120,8 @@ maxwidth: the maximum width of the content (in this case 1600, cause we don't wa
 <p>Copy the HTML, the CSS and the JS code in your site and launch resizebyratio.</p>
 
 <p>$(document).ready(resizebyratio(#MYCONTENT, 1600, 800, 1600));</p>
+<p>  </p>
+<p>  </p>
     </div>
 
     <!-- FOOTER  -->
