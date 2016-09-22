@@ -1,6 +1,6 @@
 function resizebyratio(divname, x, y, maxwidth) {
 	$(divname).css("display", "none");
-	var screenw = window.innerWidth-15;
+	var screenw = window.innerWidth-20;
 	var screenh = window.innerHeight-20;
 	var screenratio = screenw / screenh;
 	var divratio = x / y;
